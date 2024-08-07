@@ -5,46 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Tech - Assignment 2</title>
     <style>
-      .text-black {
-        color: black;
-      }
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: white;
-      }
-
-      .heading {
-        margin-top: 1px;
-        padding-top: 1px;
+        background-color: #f8f9fa;
+        color: #333;
       }
 
       header {
-        background-image: url("/home.jpeg"); /* Replace with your image URL */
+        background-image: url("home.jpeg"); /* Replace with your image URL */
         background-size: cover;
+        background-position: center;
         color: white;
-        padding: 50px 0;
+        padding: 50px 20px;
         text-align: center;
         height: 500px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+      }
+
+      .heading {
+        margin: 0;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: -70px;
       }
 
       .profile-icon {
-        position: relative;
-        bottom: -238px; /* Adjust as needed for positioning */
-        display: inline-block;
-        width: 100px; /* Adjust size as needed */
-        height: 100px; /* Adjust size as needed */
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         overflow: hidden;
-        margin-left: -29px;
+        border: 5px solid white;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
-      .profile-name {
-        color: black;
-        font-size: 21px;
-        margin-top: 244px;
-        margin-left: -32px;
-        font-weight: 600;
+
+      .profile-icon:hover {
+        transform: scale(1.1);
       }
 
       .profile-icon img {
@@ -53,56 +63,89 @@
         object-fit: cover;
       }
 
-      h1 {
-        margin-bottom: 0;
+      .profile-name {
+        color: black;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-top: 10px; /* Space between icon and name */
+        text-align: center;
       }
 
-      h2 {
-        margin: 20px 0;
-        font-size: 24px;
-        color: #333;
+      main {
+        padding: 20px;
+        margin-top: 80px;
       }
 
       .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 69px 0;
+        max-width: 1000px;
+        margin: 0 auto;
         padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
       }
 
       .item {
-        margin-bottom: 20px;
-        margin-left: 173px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .item h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: #007bff;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .item h1:hover {
+        color: #0056b3;
       }
 
       .item img {
-        max-width: 100%;
-        height: 500px;
-        border-radius: 5px;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+      }
+
+      .item img:hover {
+        transform: scale(1.05);
       }
 
       .item p {
         margin: 10px 0;
         font-size: 16px;
-        line-height: 1.5;
+        line-height: 1.6;
+        color: #555;
+        text-align: center;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
     </style>
   </head>
   <body>
     <header>
       <h1 class="heading">
-        <span class="text-black"><br /><br /><br /><br /><br />CCET(DG): </span>
-        on-campus beverages you should <br />
-        be drinking
+        <span style="color: black;">CCET(DG):</span> on-campus beverages you should be drinking
       </h1>
-      <div class="profile-icon">
-        <img src="/profile.jpeg" alt="Profile Icon" />
+      <div class="profile-container">
+        <div class="profile-icon">
+          <img src="profile.jpeg" alt="Profile Icon" />
+        </div>
+        <div class="profile-name">Rupali</div>
       </div>
-      <p class="profile-name">Rupali</p>
     </header>
 
     <main>
@@ -117,7 +160,7 @@
             quis repellendus, cum veritatis. Quidem incidunt voluptate numquam
             cum odit.
           </p>
-          <img src="/drink-1.jpeg" height="500px" />
+          <img src="drink-1.jpeg" alt="Italian Soda at Bytes" />
         </div>
 
         <div class="item">
@@ -130,7 +173,7 @@
             quis repellendus, cum veritatis. Quidem incidunt voluptate numquam
             cum odit.
           </p>
-          <img src="/drink-2.jpeg" height="500px" />
+          <img src="drink-2.jpeg" alt="Bubble Tea at Pop Tea Bar" />
         </div>
 
         <div class="item">
@@ -143,7 +186,7 @@
             quis repellendus, cum veritatis. Quidem incidunt voluptate numquam
             cum odit.
           </p>
-          <img src="/drink-3.jpeg" alt="Latte" height="500px" />
+          <img src="drink-3.jpeg" alt="Latte at CoHo" />
         </div>
 
         <div class="item">
@@ -156,7 +199,7 @@
             quis repellendus, cum veritatis. Quidem incidunt voluptate numquam
             cum odit.
           </p>
-          <img src="/place-4.jpeg" alt="Agua Fresca" height="500px" />
+          <img src="place-4.jpeg" alt="Agua Fresca at Nexus Cafe" />
         </div>
       </div>
     </main>
